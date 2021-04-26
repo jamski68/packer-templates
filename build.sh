@@ -74,7 +74,7 @@ cmdline() {
 
   for BUILD in ${BUILDS}; do
     # Packer command line parameters
-    export PACKER_CMD_PARAMS=("build" "-color=false" "-var" "headless=true")
+    export PACKER_CMD_PARAMS=("build" "-var" "headless=true")
     export PACKER_VAGRANT_PROVIDER="${BUILD##*-}"
     export NAME="${BUILD%-*}"
     MY_NAME=$(echo "${NAME}" | awk -F '-' '{ print $1 }')

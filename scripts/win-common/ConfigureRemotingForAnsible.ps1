@@ -450,4 +450,8 @@ Else
     Write-Log "Unable to establish an HTTP or HTTPS remoting session."
     Throw "Unable to establish an HTTP or HTTPS remoting session."
 }
+
+# Install OpenSSH
+Add-WindowsCapability -Online -Name 'OpenSSH.Server~~~~0.0.1.0'
+
 Write-VerboseLog "PS Remoting has been successfully configured for Ansible."

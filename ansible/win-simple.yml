@@ -24,9 +24,6 @@
         data: 0
         datatype: dword
 
-    - name: Install OpenSSH
-      win_shell: Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-
     - name: Enabled sshd and start it at boot
       win_service: 
         name: sshd
@@ -34,7 +31,14 @@
         start_mode: auto
 
     - name: Enable ssh Inbound Firewall Rule
-      win_shell: New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+      win_firewall_rule:
+        name: SSH
+        localport: 22
+        action: allow
+        direction: in
+        protocol: tcp
+        state: present
+        enabled: yes
 
     - name: Enable Firewall Inbound Rules Group
       win_shell: Enable-NetFirewallRule -DisplayGroup "{{ item }}"
