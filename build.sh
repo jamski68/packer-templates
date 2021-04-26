@@ -147,11 +147,11 @@ cmdline() {
           ;;
           *windows-server-2019-*)
             export WINDOWS_TYPE="server"
-            export ISO_URL="https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso"
+            export ISO_URL="file:///home/james/src/boxcutter-windows/iso/en_windows_server_2019_updated_april_2021_x64_dvd_ef6373f0.iso"
           ;;
           *windows-server-2016-*)
             export WINDOWS_TYPE="server"
-            export ISO_URL="https://software-download.microsoft.com/download/pr/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO"
+            export ISO_URL="file:///home/james/src/windows/iso/en_windows_server_2016_vl_x64_dvd_11636701.iso"
           ;;
           *windows-server-2012_r2-*)
             export WINDOWS_RELEASE="r2"
