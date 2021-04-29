@@ -140,7 +140,7 @@ cmdline() {
       WINDOWS_EDITION=$(echo "${VAGRANT_CLOUD_BOX_NAME}" | awk -F '-' '{ print $4 }')
       export WINDOWS_EDITION
       export WINDOWS_EDITION_UC=${WINDOWS_EDITION^}
-      export NAME="${MY_NAME}-${WINDOWS_TYPE}-${WINDOWS_VERSION}-${WINDOWS_EDITION}-${WINDOWS_ARCH}-eval"
+      export NAME="${MY_NAME}-${WINDOWS_TYPE}-${WINDOWS_VERSION}-${WINDOWS_EDITION}-${WINDOWS_ARCH}"
       export SHORT_DESCRIPTION="Windows ${WINDOWS_TYPE_UC} ${WINDOWS_VERSION} ${WINDOWS_EDITION_UC} (${WINDOWS_ARCH}) Evaluation for libvirt and virtualbox"
       LONG_DESCRIPTION=$(envsubst < "templates/${MY_NAME}-${WINDOWS_TYPE}-${WINDOWS_VERSION}-eval.md")
       export LONG_DESCRIPTION

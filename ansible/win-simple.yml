@@ -29,6 +29,7 @@
         name: sshd
         state: started
         start_mode: auto
+      ignore_errors: true # This task is failing on win 2016
 
     - name: Enable ssh Inbound Firewall Rule
       win_firewall_rule:
